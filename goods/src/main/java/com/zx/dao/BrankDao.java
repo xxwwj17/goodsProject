@@ -11,9 +11,9 @@ public interface BrankDao extends BaseMapper<BrankEntity> {
 
     /**
      * 获取品牌信息
-     * @param brank_id
+     * @param
      * @return
      */
-    BrankEntity selectByBrankKey(Integer brank_id);
+    List<BrankEntity> selectByBrankKey();
 
 }

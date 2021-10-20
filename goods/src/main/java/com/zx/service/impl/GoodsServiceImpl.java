@@ -26,10 +26,14 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<GoodsDto> selectForPage(Integer startIndex, Integer pageSize) {
         List<GoodsEntity> list = goodsDao.selectForPage(startIndex,pageSize);
+        List<BrankEntity> branklist = brankDao.selectByBrankKey();
         List<GoodsDto> goodsDtoList = ConvertUtils.sourceToTarget(list, GoodsDto.class);
         goodsDtoList.forEach(entity -> {
-            BrankEntity brank = brankDao.selectByBrankKey(entity.getBrank_id().intValue());
-            entity.setBrank_name(brank.getBrank_name());
+            for (int i = 0;i<branklist.size();i++) {
+                if (branklist.get(i).getBrank_id().intValue()==entity.getBrank_id().intValue()) {
+                    entity.setBrank_name(branklist.get(i).getBrank_name());
+                }
+            }
         });
         return goodsDtoList;
     }

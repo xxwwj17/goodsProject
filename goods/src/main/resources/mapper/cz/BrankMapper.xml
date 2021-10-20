@@ -10,7 +10,5 @@
             brank_id,
             brank_name
         from s_brank
-        where brank_id = #{brank_id}
-        limit 1
     </select>
 </mapper>
