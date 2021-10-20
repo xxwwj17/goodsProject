@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zx.dao.BrankDao" >
+    <resultMap id="BrankEntityMap" type="com.zx.entity.BrankEntity" >
+        <id column="brank_id" property="brank_id" jdbcType="INTEGER" />
+        <result column="brank_name" property="brank_name" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="selectByBrankKey" resultMap="BrankEntityMap" >
+        select
+            brank_id,
+            brank_name
+        from s_brank
+        where brank_id = #{brank_id}
+        limit 1
+    </select>
+</mapper>
