@@ -9,6 +9,6 @@
         select
             brank_id,
             brank_name
-        from s_brank
+        from s_brank where brank_id in (#{brank_id})
     </select>
 </mapper>

@@ -10,5 +10,5 @@ public interface BrankService {
      * @param brank_id
      * @return
      */
-    List<BrankEntity> selectByBrankKey(Integer brank_id);
+    List<BrankEntity> selectByBrankKey(String brank_id);
 }

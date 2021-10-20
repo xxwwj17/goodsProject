@@ -14,6 +14,6 @@ public interface BrankDao extends BaseMapper<BrankEntity> {
      * @param
      * @return
      */
-    List<BrankEntity> selectByBrankKey();
+    List<BrankEntity> selectByBrankKey(String break_id);
 
 }
